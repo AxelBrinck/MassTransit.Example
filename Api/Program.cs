@@ -1,12 +1,22 @@
+using Components.Consumers;
 using MassTransit;
-using MassTransit.Example.Components.Consumers;
+using MessageContracts;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddMassTransit(options =>
+builder.Services.AddMassTransit(configuration =>
 {
-    options.AddConsumer<SubmitOrderConsumer>();
+    configuration.AddConsumer<SubmitOrderConsumer>();
+    configuration.AddRequestClient<ISubmitOrder>();
+    configuration.UsingInMemory((context, cfg) =>
+    {
+        cfg.ConfigureEndpoints(context);
+    });
 });
+builder.Services.AddMassTransitHostedService();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -21,6 +31,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

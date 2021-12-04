@@ -1,12 +1,19 @@
-using MassTransit.Example.MessageContracts;
+using System.Threading.Tasks;
+using MassTransit;
+using MessageContracts;
 
-namespace MassTransit.Example.Components.Consumers
+namespace Components.Consumers
 {
-    public class SubmitOrderConsumer : IConsumer<SubmitOrder>
+    public class SubmitOrderConsumer : IConsumer<ISubmitOrder>
     {
-        public async Task Consume(ConsumeContext<SubmitOrder> context)
+        public async Task Consume(ConsumeContext<ISubmitOrder> context)
         {
-            throw new NotImplementedException();
+            await context.RespondAsync<IOrderSubmissionAccepted>(new
+            {
+                context.Message.OrderId,
+                InVar.Timestamp,
+                context.Message.CustomerNumber
+            });
         }
     }
 }

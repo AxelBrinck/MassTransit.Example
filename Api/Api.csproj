@@ -5,11 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    <PackageReference Include="MassTransit.AspNetCore" Version="7.2.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.2.4"/>
+    <PackageReference Include="MassTransit.Analyzers" Version="7.2.4"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MessageContracts\MessageContracts.csproj" />
-    <ProjectReference Include="..\Components\Components.csproj" />
+    <ProjectReference Include="..\MessageContracts\MessageContracts.csproj"/>
+    <ProjectReference Include="..\Components\Components.csproj"/>
   </ItemGroup>
 </Project>
