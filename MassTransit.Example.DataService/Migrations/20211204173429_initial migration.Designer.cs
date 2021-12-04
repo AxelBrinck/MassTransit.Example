@@ -11,13 +11,35 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MassTransit.Example.DataService.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211204163404_initial migration")]
+    [Migration("20211204173429_initial migration")]
     partial class initialmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
+
+            modelBuilder.Entity("MassTransit.Example.Entities.UserEntity", b =>
+                {
+                    b.Property<string>("Username")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Username");
+
+                    b.HasIndex("Username")
+                        .IsUnique();
+
+                    b.ToTable("Users");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {

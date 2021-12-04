@@ -6,13 +6,13 @@ namespace Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class OrderController : ControllerBase
+    public class OrdersController : ControllerBase
     {
-        private readonly ILogger<OrderController> _logger;
+        private readonly ILogger<OrdersController> _logger;
         private readonly IRequestClient<ISubmitOrder> _requestClient;
 
-        public OrderController(
-            ILogger<OrderController> logger,
+        public OrdersController(
+            ILogger<OrdersController> logger,
             IRequestClient<ISubmitOrder> requestClient)
         {
             _logger = logger;

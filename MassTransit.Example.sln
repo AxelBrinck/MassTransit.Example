@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.Example.DataSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.Example.MessageContracts", "MassTransit.Example.MessageContracts\MassTransit.Example.MessageContracts.csproj", "{55195C80-BF40-415C-9AB2-2ED062D1E893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.Example.Entities", "MassTransit.Example.Entities\MassTransit.Example.Entities.csproj", "{5966D94D-0228-4B00-AE1A-03D002F8CD60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{55195C80-BF40-415C-9AB2-2ED062D1E893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55195C80-BF40-415C-9AB2-2ED062D1E893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55195C80-BF40-415C-9AB2-2ED062D1E893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5966D94D-0228-4B00-AE1A-03D002F8CD60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5966D94D-0228-4B00-AE1A-03D002F8CD60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5966D94D-0228-4B00-AE1A-03D002F8CD60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5966D94D-0228-4B00-AE1A-03D002F8CD60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
