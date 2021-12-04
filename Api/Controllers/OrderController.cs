@@ -1,9 +1,6 @@
-using System;
-using System.Threading.Tasks;
 using MassTransit;
 using MessageContracts;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Api.Controllers
 {

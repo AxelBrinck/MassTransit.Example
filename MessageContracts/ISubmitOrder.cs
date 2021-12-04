@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MessageContracts
+﻿namespace MessageContracts
 {
     public interface ISubmitOrder
     {

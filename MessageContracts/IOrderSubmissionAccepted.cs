@@ -1,5 +1,3 @@
-using System;
-
 namespace MessageContracts
 {
     public interface IOrderSubmissionAccepted
