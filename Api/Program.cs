@@ -1,10 +1,11 @@
 using MassTransit;
+using MassTransit.Example.Components.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMassTransit(options =>
 {
-    
+    options.AddConsumer<SubmitOrderConsumer>();
 });
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
