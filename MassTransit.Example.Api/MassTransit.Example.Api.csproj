@@ -10,16 +10,15 @@
     <PackageReference Include="MassTransit.Analyzers" Version="7.2.4"/>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0"/>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.0"/>
-    <PackageReference Include="Microsoft.Identity.Web" Version="1.16.0"/>
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.0"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MessageContracts\MessageContracts.csproj"/>
+    <ProjectReference Include="..\MassTransit.Example.MessageContracts\MassTransit.Example.MessageContracts.csproj"/>
     <ProjectReference Include="..\MassTransit.Example.Components\MassTransit.Example.Components.csproj"/>
+    <ProjectReference Include="..\MassTransit.Example.DataService\MassTransit.Example.DataService.csproj"/>
   </ItemGroup>
 </Project>

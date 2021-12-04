@@ -1,12 +1,12 @@
 using System.Text;
 using Api.Configuration;
-using Api.Handlers;
 using MassTransit;
 using MassTransit.Example.Components.Consumers;
+using MassTransit.Example.DataService.Data;
 using MessageContracts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Identity.Web;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,10 +21,14 @@ builder.Services.AddMassTransit(configuration =>
     });
 });
 builder.Services.AddMassTransitHostedService();
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfig"));
+/*builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfig"));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.SaveToken = true;
@@ -42,7 +46,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddDefaultIdentity<IdentityUser>(options => 
 {
     options.SignIn.RequireConfirmedAccount = true;
-})/*.AddEntityFrameworkStores<UserDbContext>()*/;
+})/*.AddEntityFrameworkStores<UserDbContext>()*/ //;
 
 var app = builder.Build();
 
