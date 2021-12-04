@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\MessageContracts\MessageContracts.csproj"/>
+    <ProjectReference Include="..\MassTransit.Example.MessageContracts\MassTransit.Example.MessageContracts.csproj"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="7.2.4"/>

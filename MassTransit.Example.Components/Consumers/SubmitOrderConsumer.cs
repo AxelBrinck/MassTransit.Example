@@ -1,7 +1,7 @@
 using MassTransit;
 using MessageContracts;
 
-namespace Components.Consumers
+namespace MassTransit.Example.Components.Consumers
 {
     public class SubmitOrderConsumer : IConsumer<ISubmitOrder>
     {
