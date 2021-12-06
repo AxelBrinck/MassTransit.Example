@@ -1,21 +1,18 @@
-using MassTransit;
+using MassTransit.Example.DataService.IConfiguration;
 using MessageContracts;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers
+namespace MassTransit.Example.Api.Controllers.V1
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class OrdersController : ControllerBase
+    public class OrdersController : BaseController
     {
-        private readonly ILogger<OrdersController> _logger;
         private readonly IRequestClient<ISubmitOrder> _requestClient;
 
         public OrdersController(
-            ILogger<OrdersController> logger,
-            IRequestClient<ISubmitOrder> requestClient)
+            IRequestClient<ISubmitOrder> requestClient,
+            IUnitOfWork unitOfWork) :
+                base(unitOfWork)
         {
-            _logger = logger;
             _requestClient = requestClient;
         }
 

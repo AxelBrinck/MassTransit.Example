@@ -15,11 +15,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MassTransit.Example.MessageContracts\MassTransit.Example.MessageContracts.csproj" />
     <ProjectReference Include="..\MassTransit.Example.Components\MassTransit.Example.Components.csproj" />
     <ProjectReference Include="..\MassTransit.Example.DataService\MassTransit.Example.DataService.csproj" />
     <ProjectReference Include="..\MassTransit.Example.Entities\MassTransit.Example.Entities.csproj" />
+    <ProjectReference Include="..\MassTransit.Example.Authentication\MassTransit.Example.Authentication.csproj" />
   </ItemGroup>
 </Project>

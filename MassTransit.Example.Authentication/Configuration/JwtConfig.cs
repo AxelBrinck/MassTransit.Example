@@ -1,4 +1,4 @@
-namespace Api.Configuration
+namespace MassTransit.Example.Authentication.Configuration
 {
     public class JwtConfig
     {
